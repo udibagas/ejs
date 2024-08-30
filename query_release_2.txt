@@ -1,0 +1,22 @@
+Part 1 Release 2
+
+-- 1. Display Category Name on Menu
+SELECT m.*, c."name" AS "Category Name" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" ;
+
+-- 2. Display Menus with Tea category
+SELECT m.*, c."name" AS "Category Name" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" WHERE c."name" = 'Tea' ;
+
+-- 3. Display Menus with highest Stocks from Toast category
+SELECT m.*, c."name" AS "Category Name" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" WHERE c."name" = 'Toast' ORDER BY m."stock" DESC;
+
+-- 4. Display Menus highest Prices with it's Category Name
+SELECT m.*, c."name" AS "Category Name" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" ORDER BY m."price" DESC; 
+
+-- 5. Display Menus average Prices whith Espresso category
+SELECT avg(m."price") AS "Average Espresso Price" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" WHERE c."name" = 'Espresso';
+
+-- 6. Display Stock of Menu with Tea category
+SELECT sum(m."stock") AS "Total Tea Stock" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" WHERE c."name" = 'Tea';
+
+-- 7. Display Stock of Menu that added in August with Espresso category
+SELECT sum(m."stock") AS "Stock of Espresso in August" FROM "Menus" m JOIN "Categories" c ON c."id" = m."categoryId" WHERE c."name" = 'Espresso' AND date_part('month', m."createdAt") = 8;

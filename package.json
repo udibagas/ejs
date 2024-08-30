@@ -1,0 +1,16 @@
+{
+  "name": "fsjs-p1-v2-c3-dhiaulhaq",
+  "version": "1.0.0",
+  "description": "Biasakan commit setiap release dan push pada jam 12 siang, jam 6 sore dan sebelum tidur.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dhiaulhaq Muhammad Naufal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

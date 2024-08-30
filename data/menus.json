@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Double Shots",
+    "category": 1,
+    "stock": 87,
+    "price": 48000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Americano",
+    "category": 1,
+    "stock": 86,
+    "price": 34000,
+    "createdAt": "2021-08-03"
+  },
+  {
+    "name": "Caramel Macchiato",
+    "category": 1,
+    "stock": 78,
+    "price": 57000,
+    "createdAt": "2021-08-03"
+  },
+  {
+    "name": "Cappucino",
+    "category": 1,
+    "stock": 56,
+    "price": 44000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Hot Chocolate",
+    "category": 2,
+    "stock": 67,
+    "price": 5000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Coffee",
+    "category": 3,
+    "stock": 95,
+    "price": 39000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Caramel Java Chip",
+    "category": 3,
+    "stock": 75,
+    "price": 53000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Mocha",
+    "category": 3,
+    "stock": 75,
+    "price": 48000,
+    "createdAt": "2021-06-03"
+  },
+  {
+    "name": "Asian Dolce",
+    "category": 3,
+    "stock": 73,
+    "price": 48000,
+    "createdAt": "2021-06-03"
+  },
+  {
+    "name": "Lemon Tea",
+    "category": 4,
+    "stock": 67,
+    "price": 22000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Green Tea",
+    "category": 4,
+    "stock": 46,
+    "price": 22000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Vanilla Cream",
+    "category": 5,
+    "stock": 57,
+    "price": 46000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Chocolate Chip Cream",
+    "category": 5,
+    "stock": 56,
+    "price": 53000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Green Tea Cream",
+    "category": 5,
+    "stock": 68,
+    "price": 53000,
+    "createdAt": "2021-07-03"
+  },
+  {
+    "name": "Mango Juice",
+    "category": 6,
+    "stock": 67,
+    "price": 39000,
+    "createdAt": "2021-07-03"
+  },
+  {
+    "name": "Guava Juice",
+    "category": 6,
+    "stock": 85,
+    "price": 39000,
+    "createdAt": "2021-07-03"
+  },
+  {
+    "name": "Strawberry Juice",
+    "category": 6,
+    "stock": 34,
+    "price": 39000,
+    "createdAt": "2021-07-03"
+  },
+  {
+    "name": "Crispy Chicken Toast",
+    "category": 7,
+    "stock": 53,
+    "price": 32000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Spicy Bulgogi Toast",
+    "category": 7,
+    "stock": 34,
+    "price": 32000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Egg and Cheese Toast",
+    "category": 7,
+    "stock": 53,
+    "price": 22000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Cireng",
+    "category": 8,
+    "stock": 44,
+    "price": 22000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Bakwan",
+    "category": 8,
+    "stock": 45,
+    "price": 22000,
+    "createdAt": "2021-03-03"
+  },
+  {
+    "name": "Risol",
+    "category": 8,
+    "stock": 47,
+    "price": 25000,
+    "createdAt": "2021-03-03"
+  }
+]

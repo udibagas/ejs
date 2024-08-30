@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Menu</title>
+  </head>
+  <body>
+    <h1>Edit Menu</h1>
+
+    <form method="post">
+      <p>
+        <label for="name">Name</label> <br />
+        <input type="text" name="name" id="name" value="<%= menu.name %>" />
+      </p>
+      <p>
+        <label for="categoryId">Category</label> <br />
+        <select name="categoryId" id="categoryId">
+          <option value="">-- Select Category --</option>
+          <% categories.forEach(({id, name}) => { %>
+          <option <%= id == menu.categoryId ? 'selected' : '' %> value="<%= id %>"><%= name %></option>
+          <% }) %>
+        </select>
+      </p>
+      <p>
+        <label for="price">Price</label> <br />
+        <input
+          type="number"
+          name="price"
+          id="price"
+          value="<%= menu.price %>"
+        />
+      </p>
+      <p>
+        <label for="stock">Stock</label> <br />
+        <input
+          type="number"
+          name="stock"
+          id="stock"
+          value="<%= menu.stock %>"
+        />
+      </p>
+      <p>
+        <input type="submit" value="Save" />
+      </p>
+    </form>
+  </body>
+</html>

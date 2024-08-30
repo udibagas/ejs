@@ -1,0 +1,87 @@
+Part 1 Release 1
+
+-- CATEGORIES TABLE
+
+-- 1. Create Categories Table
+CREATE TABLE IF NOT EXISTS "Categories" (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR NOT NULL
+);
+
+-- 2. Insert Categories
+INSERT INTO "Categories" (name)
+VALUES 
+('Espresso'),
+('Chocolate'),
+('Coffee'),
+('Tea'),
+('Cream'),
+('Juice'),
+('Toast'),
+('Other');
+
+-- 3. Select Categories
+SELECT * FROM "Categories";
+
+-- 4. Update Categories
+UPDATE "Categories" 
+SET name = 'Milk'
+WHERE id = 8;
+
+-- 5. Delete Categories
+DELETE FROM "Categories" WHERE id = 8;
+
+
+-- MENUS TABLE
+
+-- 1. Create Menus Table
+CREATE TABLE IF NOT EXISTS "Menus" (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR NOT NULL,
+	categoryId INTEGER NOT NULL REFERENCES "Categories"(id),
+	stock INTEGER NOT NULL,
+	price INTEGER NOT NULL,
+	createdAt DATE NOT NULL
+);
+
+-- 2. Insert Menus
+INSERT INTO "Menus" (name, categoryid, stock, price, createdat)
+VALUES 
+('Caramel Macchiato', 1, 78, 57000, '2021-08-03'),
+('Caramel Java Chip', 3, 75, 57000, '2021-03-03'),
+('Green Tea Cream', 5, 68, 53000, '2021-07-03'),
+('Chocolate Chip Cream', 5, 56, 53000, '2021-03-03'),
+('Double Shots', 1, 95, 48000, '2021-03-03'),
+('Mocha', 3, 75, 48000, '2021-06-03'),
+('Asian Dolce', 3, 73, 48000, '2021-06-03'),
+('Vanilla Cream', 5, 57, 46000, '2021-03-03'),
+('Cappucino', 1, 56, 44000, '2021-03-03'),
+('Coffee', 3, 95, 39000, '2021-03-03'),
+('Guava Juice', 6, 85, 39000, '2021-07-03'),
+('Mango Juice', 6, 67, 39000, '2021-07-03'),
+('Strawberry Juice', 6, 34, 39000, '2021-07-03'),
+('Americano', 1, 86, 34000, '2021-08-03'),
+('Crispy Chicken Toast', 7, 53, 32000, '2021-03-03'),
+('Spicy Bulgogi Toast', 7, 34, 32000, '2021-03-03'),
+('Risol', 8, 47, 25000, '2021-03-03'),
+('Lemon Tea', 4, 67, 22000, '2021-03-03'),
+('Egg and Cheese Toast', 7, 53, 22000, '2021-03-03'),
+('Green Tea', 4, 46, 22000, '2021-03-03'),
+('Bakwan', 8, 45, 22000, '2021-03-03'),
+('Cireng', 8, 44, 22000, '2021-03-03'),
+('Hot Chocolate', 2, 67, 5000, '2021-03-03');
+
+-- 3. Select Menus
+SELECT * FROM "Menus";
+
+-- 4. Update Menus
+UPDATE "Menus" 
+SET name = 'Iced Coffee'
+WHERE id = 10;
+
+-- 5. Delete Menus
+DELETE FROM "Menus" WHERE id = 22;
+
+
+-- DROP ALL TABLES
+DROP TABLE IF EXISTS "Categories", "Menus";
