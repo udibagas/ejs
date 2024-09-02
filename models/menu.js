@@ -18,18 +18,6 @@ class Menu {
     });
   }
 
-  static createMenus(data) {
-    return data.map((el) => {
-      const { id, name, price, stock, categoryId, category, createdAt } = el;
-      return new Menu(id, name, price, stock, categoryId, category, createdAt);
-    });
-  }
-
-  static createMenu(data) {
-    const { id, name, price, stock, categoryId, category, createdAt } = data;
-    return new Menu(id, name, price, stock, categoryId, category, createdAt);
-  }
-
   static async findAll(keyword) {
     let query = `
       SELECT
@@ -44,10 +32,13 @@ class Menu {
     }
 
     const { rows } = await pool.query(query);
-    return this.createMenus(rows);
+    return rows.map((el) => {
+      const { id, name, price, stock, categoryId, category, createdAt } = el;
+      return new Menu(id, name, price, stock, categoryId, category, createdAt);
+    });
   }
 
-  static async findOne(id) {
+  static async findOne(menuId) {
     let query = `
       SELECT
         m.*,
@@ -57,13 +48,14 @@ class Menu {
       WHERE m.id = $1
     `;
 
-    const { rows, rowCount } = await pool.query(query, [id]);
+    const { rows, rowCount } = await pool.query(query, [menuId]);
 
     if (rowCount == 0) {
       throw new Error("Menu not found");
     }
 
-    return this.createMenu(rows[0]);
+    const { id, name, price, stock, categoryId, category, createdAt } = rows[0];
+    return new Menu(id, name, price, stock, categoryId, category, createdAt);
   }
 
   static async create({ name, categoryId, price, stock }) {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Categories</title>
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
     <h1>Categories</h1>
@@ -17,9 +18,9 @@
       </thead>
 
       <tbody>
-        <% categories.forEach((el, index) => { %>
+        <% categories.forEach((el, i) => { %>
         <tr>
-          <td><%= ++index %></td>
+          <td><%= ++i %></td>
           <td><%= el.name %></td>
         </tr>
         <% }) %>

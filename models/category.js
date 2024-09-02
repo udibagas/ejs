@@ -6,14 +6,15 @@ class Category {
     this.name = name;
   }
 
-  static createCategories(data) {
-    return data.map(({ id, name }) => new Category(id, name));
-  }
-
   static async findAll() {
     let query = `SELECT * FROM "Categories" ORDER BY "name" ASC`;
     const { rows } = await pool.query(query);
-    return this.createCategories(rows);
+
+    const categories = rows.map((el) => {
+      return new Category(el.id, el.name);
+    });
+
+    return categories;
   }
 }
 

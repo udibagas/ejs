@@ -28,6 +28,18 @@ class Controller {
     }
   }
 
+  static async menu(req, res) {
+    const { id } = req.params;
+
+    try {
+      const menu = await Menu.findOne(id);
+      res.send(menu);
+    } catch (err) {
+      res.send(err.message);
+      console.log(err);
+    }
+  }
+
   static async addMenu(req, res) {
     try {
       const categories = await Category.findAll();
