@@ -33,7 +33,7 @@ class Controller {
 
     try {
       const menu = await Menu.findOne(id);
-      res.send(menu);
+      res.render("menu", { menu });
     } catch (err) {
       res.send(err.message);
       console.log(err);

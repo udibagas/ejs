@@ -45,7 +45,7 @@ class Menu {
         c."name" AS "category"
       FROM "Menus" m
       JOIN "Categories" c ON c.id = m."categoryId"
-      WHERE m.id = $1
+      WHERE m.id = $1;
     `;
 
     const { rows, rowCount } = await pool.query(query, [menuId]);

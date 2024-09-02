@@ -4,7 +4,11 @@
   "description": "Biasakan commit setiap release dan push pada jam 12 siang, jam 6 sore dan sebelum tidur.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch app.js",
+    "start": "node app.js",
+    "migrate": "node migrations/setup.js",
+    "seed": "node seeders/seed.js"
   },
   "author": "Dhiaulhaq Muhammad Naufal",
   "license": "ISC",
