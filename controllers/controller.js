@@ -41,9 +41,11 @@ class Controller {
   }
 
   static async addMenu(req, res) {
+    const { error } = req.query;
+
     try {
       const categories = await Category.findAll();
-      res.render("addMenu", { categories });
+      res.render("addMenu", { categories, error: JSON.parse(error || "{}") });
     } catch (err) {
       res.send(err.message);
       console.log(err);
@@ -57,7 +59,12 @@ class Controller {
       await Menu.create({ name, categoryId, price, stock });
       res.redirect("/menus");
     } catch (err) {
-      res.send(err.message);
+      if (err.name == "ValidationError") {
+        res.redirect(`/menus/add?error=${JSON.stringify(err.errors)}`);
+      } else {
+        res.status(500).render("error");
+      }
+
       console.log(err);
     }
   }
@@ -76,10 +83,16 @@ class Controller {
 
   static async editMenu(req, res) {
     const { id } = req.params;
+    const { error } = req.query;
+
     try {
       const categories = await Category.findAll();
       const menu = await Menu.findOne(id);
-      res.render("editMenu", { categories, menu });
+      res.render("editMenu", {
+        categories,
+        menu,
+        error: JSON.parse(error || "{}"),
+      });
     } catch (err) {
       res.send(err.message);
       console.log(err);
@@ -93,8 +106,11 @@ class Controller {
       await Menu.update(id, { name, categoryId, price, stock });
       res.redirect("/menus");
     } catch (err) {
-      res.send(err.message);
-      console.log(err);
+      if (err.name == "ValidationError") {
+        res.redirect(`/menus/edit/${id}?error=${JSON.stringify(err.errors)}`);
+      } else {
+        res.status(500).render("error");
+      }
     }
   }
 }

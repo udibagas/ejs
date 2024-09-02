@@ -5,3 +5,12 @@
 h1 {
   color: violet;
 }
+
+a.active {
+  font-weight: bold;
+  color: crimson;
+}
+
+.error {
+  color: crimson;
+}

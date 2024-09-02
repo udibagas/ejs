@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
+    <%- include('_nav', { page: '/menus/add' }) %>
+
     <h1>Add Menu</h1>
+
+    <!-- <p class="error"><%= error %></p> -->
 
     <form method="post">
       <p>
         <label for="name">Name</label> <br />
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" /> <br />
+        <% if (error.name) { %>
+        <span class="error"><%= error.name %></span>
+        <% } %>
       </p>
       <p>
         <label for="categoryId">Category</label> <br />
@@ -22,14 +29,24 @@
           <option value="<%= id %>"><%= name %></option>
           <% }) %>
         </select>
+        <br />
+        <% if (error.categoryId) { %>
+        <span class="error"><%= error.categoryId %></span>
+        <% } %>
       </p>
       <p>
         <label for="price">Price</label> <br />
-        <input type="number" name="price" id="price" />
+        <input type="number" name="price" id="price" /> <br />
+        <% if (error.price) { %>
+        <span class="error"><%= error.price %></span>
+        <% } %>
       </p>
       <p>
         <label for="stock">Stock</label> <br />
-        <input type="number" name="stock" id="stock" />
+        <input type="number" name="stock" id="stock" /> <br />
+        <% if (error.stock) { %>
+        <span class="error"><%= error.stock %></span>
+        <% } %>
       </p>
       <p>
         <input type="submit" value="Save" />
